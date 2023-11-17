@@ -1,53 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>AND</title>
-	<style>
-.button {
-  background-color: #008CBA; /* Blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
+<title>And Gate</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
 
-<script src = "andGate.js"></script>
-<script> 
+<h1>And Gate</h1>
 
-</script>
+<h2>This is how the AND gate works.</h2>
 
- <button class="button" onclick = "and()">Run</button>
-<p>
-
-<table style="width:100%">
-
-  <tr>
-    <td>
-	<img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png"  id="toggleImage" onclick="toggleImage(); toggleInputOne();"/>
+<table style="width:100%">	
+	<tr>
+<td >
+	<h2 style="text-align:center;">Input</h2>
+	<p style= "text-align:center;">
+	
+	<button  class="button" onclick="runBtn()">RUN</button>
+	</p>
+	
+	<p style="text-align: center;">
+	<label class="switch">
+		<input  type="checkbox" id="box1">
+		<span class="slider"></span>
+	</label>
 	<br>
-    <img src="https://www.iconsdb.com/icons/preview/red/button-off-xxl.png"  id="toggleImage2" onclick="toggleImage2(); toggleInputTwo();"/> 
+	<br>
+		<label class="switch">
+		<input type="checkbox" id="box2">
+		<span class="slider"></span>
+	</label>
+	</p>
 </td>
-    <td><img id="andGate" src="and2off.PNG" ></td>
-  </tr>
 
+
+<td><h2 style= "text-align:center;">Output</h2>
+<p style="text-align:center;">
+
+<img id="myImage" src="zero_zero.jpeg" alt="zero_zero.jpeg" height= "100" >
+</p>
+</td>
+
+</tr>
 </table>
 
-<a href="index.html">Back to Home</a></h3>
 
-</p>
+<script>
+function runBtn()  {
 
+	var box1 = document.getElementById("box1");
+	var box2 = document.getElementById("box2");
 
+	var state1 = box1.checked;
+	var state2 = box2.checked;
 
+	if(state1==true && state2==true) {
+	var b = document.getElementById("myImage");
+    b.src = "one_one.jpeg" ;	
+	}  else if (state1==false && state2 == true){
+		var b = document.getElementById("myImage");
+    b.src = "zero_one.jpeg" ;	
+	}   else if (state1==true && state2 == false){
+		var b = document.getElementById("myImage");
+    b.src = "one_zero.jpeg" ;	
+	} 
+	else {
+		var b = document.getElementById("myImage");
+    b.src = "zero_zero.jpeg" ;	
+	}
 
-
+}
+</script>
 
 </body>
+
 </html>
